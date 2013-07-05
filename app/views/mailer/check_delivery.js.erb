@@ -1,0 +1,9 @@
+var completion = <%= @completion %>
+document.getElementById('delivery-bar').style.width = completion + '%';
+
+if(completion == 100) {
+  $('#delivery-info').html('<%= j(render("progress_bar_delivered")) %>');
+}
+else {
+  setTimeout(checkDelivery, 1000);
+}

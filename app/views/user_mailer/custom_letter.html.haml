@@ -1,0 +1,6 @@
+%p
+  Здравствуй, #{@username} 
+%p
+  - if @image_name
+    = image_tag(attachments.inline[@image_name].url, style: 'float: left; margin: 0 20px 20px 0;')
+  = @text

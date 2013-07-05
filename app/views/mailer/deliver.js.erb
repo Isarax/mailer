@@ -1,0 +1,9 @@
+$('#delivery-info').html('<%= j(render("progress_bar_delivering", completion: 0)) %>');
+
+document.getElementById('delivery-info').setAttribute('job-state-id', '<%= @job_state.id %>');
+setTimeout(checkDelivery, 1000);
+
+function checkDelivery() {
+  var job_state_id = document.getElementById('delivery-info').getAttribute("job-state-id");
+  $.get("/check_delivery.js?job_state_id=" + job_state_id)
+};

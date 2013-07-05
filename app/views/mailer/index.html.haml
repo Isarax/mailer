@@ -1,0 +1,24 @@
+.span8.offset2
+  = form_tag({ action: :deliver, controller: :mailer }, method: :post, remote: true, multipart: true) do
+    .row
+      .control-group
+        %h4.control-label Subject
+        .controls
+          = text_field_tag(:subject, nil, class: 'span5')
+    .row
+      .control-group
+        %h4.control-label Text
+        .controls
+          = text_area_tag(:text, nil, rows: 10, class: 'span8')
+    .row 
+      .control-group
+        %h4.control-label Upload image
+        .controls
+          #hidden-image-upload.hidden= file_field_tag(:image, accept: 'image/*')
+          #image-upload.input-append
+            %p.input.uneditable-input No file chosen
+            = link_to('Select', 'javascript:void(0);', class: 'btn')
+    
+    .row
+      #delivery-info
+        = submit_tag('Send mail', class: 'btn btn-primary btn-large', remote: true)
