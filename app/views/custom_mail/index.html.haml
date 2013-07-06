@@ -1,5 +1,5 @@
 .span8.offset2
-  = form_tag({ action: :deliver, controller: :mailer }, method: :post, remote: true, multipart: true) do
+  = form_tag({ action: :deliver, controller: :custom_mail }, method: :post, remote: true, multipart: true) do
     .row
       .control-group
         %h4.control-label Subject
@@ -21,4 +21,4 @@
     
     .row
       #delivery-info
-        = submit_tag('Send mail', class: 'btn btn-primary btn-large', remote: true)
+        = submit_tag('Send mail', remote: true, class: 'btn btn-primary btn-large', id: 'submit-button')

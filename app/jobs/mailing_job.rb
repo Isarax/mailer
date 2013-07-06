@@ -1,6 +1,6 @@
 class MailingJob < Struct.new(:letter, :job_state_id)
   def perform
-    num_of_mails = 10
+    num_of_mails = 500
     mailer = UserMailer.custom_letter(letter)
     job_state = JobState.find(job_state_id)
     

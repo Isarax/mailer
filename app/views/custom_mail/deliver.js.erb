@@ -3,7 +3,15 @@ $('#delivery-info').html('<%= j(render("progress_bar_delivering", completion: 0)
 document.getElementById('delivery-info').setAttribute('job-state-id', '<%= @job_state.id %>');
 setTimeout(checkDelivery, 1000);
 
+var controls = $(".controls :input");
+var i;
+for (i = 0; i < controls.length; i++) {
+  controls[i].disabled = true;
+}
+$('#image-upload a').addClass('disabled');
+$('#image-upload a').unbind();
+
 function checkDelivery() {
   var job_state_id = document.getElementById('delivery-info').getAttribute("job-state-id");
-  $.get("/check_delivery.js?job_state_id=" + job_state_id)
+  $.get("/mail/check_delivery.js?job_state_id=" + job_state_id)
 };

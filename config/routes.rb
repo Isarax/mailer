@@ -1,8 +1,8 @@
 Mailer::Application.routes.draw do
-  root :to => redirect('/mailer')
-  get 'mailer' => 'mailer#index'
-  post 'mailer' => 'mailer#deliver'
-  get 'check_delivery' => 'mailer#check_delivery'
+  root :to => redirect('/mail')
+  get 'mail' => 'custom_mail#index'
+  post 'mail' => 'custom_mail#deliver'
+  get 'mail/check_delivery' => 'custom_mail#check_delivery'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
