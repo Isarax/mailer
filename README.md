@@ -1,5 +1,6 @@
 Mailer
 ======
+
 #Deployment instructions
 
 I assume you are using rvm, in case you don't here is a great article http://ryanbigg.com/2010/12/ubuntu-ruby-rvm-rails-and-you/.
@@ -34,5 +35,6 @@ You can find app on localhost:3000 and mailcatcher on localhost:1080.
 
 By default application sends 500 letters but you can change it in ```app/jobs/mailing_job.rb``` by setting ```num_of_mails``` variable to whatever you like, you can also change e-mail options in ```app/mailers/user_mailer.rb```, just don't forget to restart delayed job which is running in background ```script/delayed_job restart```. 
 
-
+#About
+This application was made as a test job for an entry Ruby on Rails developer position.
 
