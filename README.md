@@ -24,7 +24,7 @@ Go into production mode:
 RAILS_ENV=production
 export RAILS_ENV
 ```
-Because of production mode we need to precompile assets: ```rake assets:precompile```. Now your application must be ready to go, just start delayed job, mailcatcher and server:
+Because of production mode we need to precompile assets: ```rake assets:precompile```. Also there is a little problem with delayed_job gem i found - you should start and shutdown server once for tmp directory creation, otherwise delayed_job won't be able to start. Now your application must be ready to go, just start delayed job, mailcatcher and server:
 ```
 script/delayed_job start
 mailcatcher
