@@ -1,8 +1,3 @@
-$('#delivery-info').html('<%= j(render("progress_bar_delivering", completion: 0)) %>');
-
-document.getElementById('delivery-info').setAttribute('job-state-id', '<%= @job_state.id %>');
-setTimeout(checkDelivery, 1000);
-
 var controls = $(".controls :input");
 var i;
 for (i = 0; i < controls.length; i++) {
@@ -10,6 +5,10 @@ for (i = 0; i < controls.length; i++) {
 }
 $('#image-upload a').addClass('disabled');
 $('#image-upload a').unbind();
+$('#delivery-info').html('<%= j(render("progress_bar_delivering", completion: 0)) %>');
+
+document.getElementById('delivery-info').setAttribute('job-state-id', '<%= @job_state.id %>');
+setTimeout(checkDelivery, 1000);
 
 function checkDelivery() {
   var job_state_id = document.getElementById('delivery-info').getAttribute("job-state-id");

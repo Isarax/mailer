@@ -15,7 +15,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: cinematron_development
+  database: mailer_development
   pool: 5
   username: <%= ENV['db_name'] %>
   password: <%= ENV['db_password'] %>
@@ -41,7 +41,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: cinematron_test
+  database: mailer_test
   pool: 5
   username: <%= ENV['db_name'] %>
   password: <%= ENV['db_password'] %>
@@ -49,7 +49,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: cinematron_production
+  database: mailer_production
   pool: 5
   username: <%= ENV['db_name'] %>
   password: <%= ENV['db_password'] %>

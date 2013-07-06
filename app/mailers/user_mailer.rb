@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "isarax@gmail.com"
+  default from: "mailer@gmail.com"
 
   def custom_letter(letter)
     @username = Random.new.seed.to_s
